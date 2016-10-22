@@ -79,7 +79,7 @@ io.on('connection', function(clientSocket){
         userList.push(userInfo);
       }
 
-      io.emit("userList", userList);
+      clientSocket.emit("userList", userList);
       io.emit("userConnectUpdate", userInfo)
   });
 
