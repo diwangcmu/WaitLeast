@@ -13,7 +13,7 @@ function checkUserNameAndPassWord(userName,password){
 }
 
 //returns 1 if userName exists in database, 0 if not
-function findByUserName(userName){
+function userNameExists(userName){
   ;
 }
 
@@ -63,7 +63,7 @@ io.on('connection', function(client){
                 var newUserId = createUserAttempt(userName,password);
 
                 if (newUserId== -1){
-                   io.emit("userNameExists",userName);
+                   io.emit("userNameExists");
                 }
 
                 else{
