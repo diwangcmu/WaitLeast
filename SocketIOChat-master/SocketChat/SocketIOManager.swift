@@ -1,4 +1,4 @@
-//
+///Users/shengxu/Desktop/WaitLeast-master/WaitLeast/SocketIOChat-master/SocketChat/ChatCell.swift
 //  SocketIOManager.swift
 //  SocketChat
 //
@@ -14,19 +14,22 @@ class SocketIOManager: NSObject {
     var socket: SocketIOClient = SocketIOClient(socketURL: NSURL(string: "http://10.251.200.5:3000")!)
     
     
-    override init() {
-        super.init()
-    }
+    //    override init() {
+    //        super.init()
+    //    }
     
     
+    //establish connection to the server when app is opened
     func establishConnection() {
         socket.connect()
     }
     
-    
+    //close connection to the server when app is closed
     func closeConnection() {
         socket.disconnect()
     }
+    
+    
     
     
     func connectToServerWithNickname(nickname: String, completionHandler: (userList: [[String: AnyObject]]!) -> Void) {
@@ -78,12 +81,5 @@ class SocketIOManager: NSObject {
     }
     
     
-    func sendStartTypingMessage(nickname: String) {
-        socket.emit("startType", nickname)
-    }
-    
-    
-    func sendStopTypingMessage(nickname: String) {
-        socket.emit("stopType", nickname)
-    }
+
 }

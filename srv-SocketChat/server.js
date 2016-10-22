@@ -43,7 +43,8 @@ io.on('connection', function(client){
       client.on("userDisconnect", function(userId){
 
             userList.splice(onlineUserList.indexOf(client.id), 1);
-            delete socketIdToUserIdDict.(client.id);
+            var clientId = client.id;
+            delete socketIdToUserIdDict.clientId;
             numOnlineUsers--;
 
       });
@@ -74,12 +75,15 @@ io.on('connection', function(client){
       });
 
       client.on("userLogin", function(userName,password){
+            console.log('login attempt');
 
             if (userName==null || userName == ""){
+                console.log('userNameEmpty');
                 io.emit("userNameEmpty");
             }
 
             else if (password==null || password == ""){
+                console.log('passwordEmpty');
                 io.emit("passwordEmpty");
             }
 
@@ -94,7 +98,8 @@ io.on('connection', function(client){
                 //login success
                 else{
                   onlineUserList.push(client.id);
-                  socketIdToUserIdDict.(client.id) = newUserId;
+                  var clientId = client.id;
+                  socketIdToUserIdDict.clientId = newUserId;
                   numOnlineUsers++;
                   pushInitialInfoAtLogin();
                 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZOu-zw-Vsy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZOu-zw-Vsy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="nHG-1r-y5P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yFt-dm-r23">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiF-Kp-zRy">
-                                <rect key="frame" x="250" y="550" width="100" height="30"/>
+                                <rect key="frame" x="110" y="518" width="100" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6MX-Dc-xAL"/>
@@ -28,24 +28,20 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qAc-74-BaV" kind="show" identifier="idSegueJoinChat" id="gqe-Rn-zCa">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="qAc-74-BaV" kind="push" identifier="idSegueJoinChat" id="gqe-Rn-zCa"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0AR-zf-cEG">
-                                <rect key="frame" x="0.0" y="64" width="600" height="463"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH4-uS-Utn">
+                                <rect key="frame" x="139" y="205" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nHG-1r-y5P" firstAttribute="top" secondItem="QiF-Kp-zRy" secondAttribute="bottom" constant="20" id="2Dr-8a-Xcs"/>
-                            <constraint firstItem="QiF-Kp-zRy" firstAttribute="top" secondItem="0AR-zf-cEG" secondAttribute="bottom" constant="23" id="H36-Bd-dey"/>
                             <constraint firstItem="QiF-Kp-zRy" firstAttribute="centerX" secondItem="yFt-dm-r23" secondAttribute="centerX" id="SM1-IZ-VmA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0AR-zf-cEG" secondAttribute="trailing" constant="-20" id="TfZ-2D-gLW"/>
-                            <constraint firstItem="0AR-zf-cEG" firstAttribute="top" secondItem="yTd-56-HbI" secondAttribute="bottom" id="V40-uU-a0p"/>
-                            <constraint firstItem="0AR-zf-cEG" firstAttribute="leading" secondItem="yFt-dm-r23" secondAttribute="leadingMargin" constant="-20" id="xqJ-fS-dRz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nYy-j1-Nnv">
@@ -55,13 +51,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tblUserList" destination="0AR-zf-cEG" id="i5H-2y-Zx6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIY-8R-HUp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1569" y="621"/>
+            <point key="canvasLocation" x="836.79999999999995" y="587.88"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="0HY-al-DJ9">
@@ -72,15 +65,15 @@
                         <viewControllerLayoutGuide type="bottom" id="mJc-Rc-8cP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iYv-Qn-i8U">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bi3-RA-Zcz">
-                                <rect key="frame" x="0.0" y="20" width="600" height="508"/>
+                                <rect key="frame" x="-4" y="20" width="328" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RjW-sP-ToV">
-                                <rect key="frame" x="25" y="64" width="550" height="60"/>
+                                <rect key="frame" x="21" y="64" width="278" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="bLP-wf-OYK"/>
@@ -90,16 +83,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyb-Af-Gxw">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="-4" y="518" width="328" height="50"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-z3-9Xx">
-                                        <rect key="frame" x="8" y="5" width="478" height="40"/>
+                                        <rect key="frame" x="8" y="5" width="206" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TY-J8-dFW">
-                                        <rect key="frame" x="494" y="5" width="98" height="40"/>
+                                        <rect key="frame" x="222" y="5" width="98" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3Tr-KS-fft"/>
@@ -124,7 +117,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User is now typing a message..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-pu-INg">
-                                <rect key="frame" x="20" y="528" width="560" height="21"/>
+                                <rect key="frame" x="16" y="496" width="288" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZcS-8X-ghd"/>
                                 </constraints>
@@ -151,6 +144,7 @@
                             <constraint firstItem="Urm-pu-INg" firstAttribute="leading" secondItem="iYv-Qn-i8U" secondAttribute="leadingMargin" id="xzU-EG-G5l"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ren-Ec-b4B"/>
                     <connections>
                         <outlet property="conBottomEditor" destination="adk-D2-7YD" id="QV2-Vn-03V"/>
                         <outlet property="lblNewsBanner" destination="RjW-sP-ToV" id="4EA-x2-Am7"/>
@@ -161,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwW-gE-TEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319" y="621"/>
+            <point key="canvasLocation" x="1236.8" y="587.88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JoK-nT-Lel">
@@ -179,7 +173,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaM-M1-Ovg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="621"/>
+            <point key="canvasLocation" x="406.39999999999998" y="587.88"/>
         </scene>
     </scenes>
 </document>

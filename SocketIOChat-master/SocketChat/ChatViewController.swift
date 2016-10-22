@@ -42,10 +42,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.handleUserTypingNotification(_:)), name: "userTypingNotification", object: nil)
         
         
-        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ChatViewController.dismissKeyboard))
-        swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Down
-        swipeGestureRecognizer.delegate = self
-        view.addGestureRecognizer(swipeGestureRecognizer)
     }
 
     
@@ -184,14 +180,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     
-    func dismissKeyboard() {
-        if tvMessageEditor.isFirstResponder() {
-            tvMessageEditor.resignFirstResponder()
-            
-            SocketIOManager.sharedInstance.sendStopTypingMessage(nickname)
-        }
-    }
-    
     
     func handleConnectedUserUpdateNotification(notification: NSNotification) {
         let connectedUserInfo = notification.object as! [String: AnyObject]
@@ -269,13 +257,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    // MARK: UITextViewDelegate Methods
-    
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        SocketIOManager.sharedInstance.sendStartTypingMessage(nickname)
-        
-        return true
-    }
 
     
     // MARK: UIGestureRecognizerDelegate Methods
